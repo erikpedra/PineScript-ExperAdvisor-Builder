@@ -37,7 +37,7 @@ builder.strategy(Title="MA Cross Take profits & stop losses", shorttitle="MA Str
 # Tambahkan input
 builder.input(name="ShortMa", defval="10", title="Short Moving Average")
 builder.input(name="LongMa", defval="30", title="Long Moving Average")
-builder.input(name="ATRlength, defval="14", title="Average True Range")
+builder.input(name="ATRlength", defval="14", title="Average True Range")
 
 # Tambahkan Indikator
 builder.add_indikator(name="ShortMa1", indicator="sma", source="close", length="ShortMa")
