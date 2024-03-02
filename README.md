@@ -58,7 +58,7 @@ builder.entry(id="long", direction="long", qty="100")
 builder.exit(id="exit", from_entry="long", stop="stopLoss", limit="takeProfit")
 
 #Tambahkan Short Entry
-builder.add_condition(name="shortCondition",)
+builder.add_condition(name="shortCondition")
 builder.entry(id="short direction="short", qty="100")
 builder.exit(id="exit", from_entry="short", stop="stopLoss", limit="takeProfit")
 
