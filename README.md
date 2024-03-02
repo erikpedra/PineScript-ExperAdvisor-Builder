@@ -65,6 +65,9 @@ builder.exit(id="exit", from_entry="short", stop="stopLoss", limit="takeProfit")
 # Tambahkan Plot Moving Average ke chart
 builder.add_pot("ShortMa1", color="color.red")
 builder.add_pot("LongMa2", color="color.green")
+
+# Cetak kode Pinescript
+print(builder.generate())
 ```
 
 
