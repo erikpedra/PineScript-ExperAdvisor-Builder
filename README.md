@@ -173,10 +173,10 @@ fast = input(defval=12, title="Fast length")
 slow = input(defval=26, title="Slow length")
 signalSmooth = input(defval=9, title="Signal Smooth")
 
-# Tambahkan Indikator
+// Tambahkan Indikator
 [myMacdLine, mySignalLine, myMacdHist] = ta.macd(close, fast, slow, signalSmooth)
 
-# Tambahkan Plot MACD ke chart
+// Tambahkan Plot MACD ke chart
 plot(series=myMacdLine, title="MACD Line", color=color.blue)
 plot(series=mySignalLine, title="Signal Line", color=color.red)
 plot(series=myMacdHist, title="Histogram", color=color.green, style=plot.style_histogram)
