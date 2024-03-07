@@ -71,7 +71,7 @@ print(builder.generate())
 ```
 
 
-### Output
+### Output Strategy PineScript
 ```pinescript
 //
 // TV2 Studio PineScript
@@ -122,4 +122,63 @@ if (shortCondition)
 plot(ShortMa1, color=color.red)
 plot(LongMa2, color=color.green)
 
+```
+
+### Indicator Example
+```python
+from PineScriptAPI import PineScriptBuilder
+
+# Inisialisasi objek PineScriptBuilder
+builder = PineScriptBuilder()
+builder.indicator(title="MACD Indicator ", shorttitle="MACD By: tv2metatrader.com", overlay=True)
+
+# Tambahkan input
+builder.input(name="fast", defval="12", title="Fast length")
+builder.input(name="slow", defval="26", title="Slow length")
+builder.input(name="signalSmooth", defval="9", title="Signal Smooth")
+
+# Tambahkan Indikator
+builder.add_indikator(name="[myMacdLine, mySignalLine, myMacdHist]", indicator="macd", source="close", fastlen="fast", slowlen="slow", signalen="signalSmooth")
+
+# Tambahkan Plot MACD ke chart
+builder.add_pot(series="myMacdLine", title="MACD Line" , color="color.blue")
+builder.add_pot(series="mySignalLine", title="Signal Line" , color="color.red")
+builder.add_pot(series="myMacdHist", title="Histogram" , color="color.green", style="plot.style_histogram")
+
+# Cetak kode Pinescript
+print(builder.generate())
+```
+
+### Output Indicator PineScript
+```pinescript
+```pinescript
+//
+// TV2 Studio PineScript
+//
+// Created with: TradingView Studio
+// Website: https://tv2metatrader.com
+//
+// Copyright 2024, TV2MetaTrader Software Ltd.
+//
+// Risk Disclosure
+//
+// Futures and forex trading contains substantial risk and is not for every investor.
+// An investor could potentially lose all or more than the initial investment.
+// Risk capital is money that can be lost without jeopardizing ones’ financial security or life style.
+// Only risk capital should be used for trading and only those with sufficient risk capital should consider trading.
+//@version=5
+indicator("MACD Indicator", shorttitle="MACD By: tv2metatrader.com", overlay=true)
+
+// Tambahkan input
+fast = input(defval=12, title="Fast length")
+slow = input(defval=26, title="Slow length")
+signalSmooth = input(defval=9, title="Signal Smooth")
+
+# Tambahkan Indikator
+[myMacdLine, mySignalLine, myMacdHist] = ta.macd(close, fast, slow, signalSmooth)
+
+# Tambahkan Plot MACD ke chart
+plot(series=myMacdLine, title="MACD Line", color=color.blue)
+plot(series=mySignalLine, title="Signal Line", color=color.red)
+plot(series=myMacdHist, title="Histogram", color=color.green, style=plot.style_histogram)
 ```
