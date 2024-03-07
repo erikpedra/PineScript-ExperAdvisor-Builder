@@ -151,7 +151,6 @@ print(builder.generate())
 
 ### Output Indicator PineScript
 ```pinescript
-```pinescript
 //
 // TV2 Studio PineScript
 //
