@@ -63,8 +63,8 @@ builder.entry(id="short direction="short", qty="100")
 builder.exit(id="exit", from_entry="short", stop="stopLoss", limit="takeProfit")
 
 # Tambahkan Plot Moving Average ke chart
-builder.add_pot("ShortMa1", color="color.red")
-builder.add_pot("LongMa2", color="color.green")
+builder.add_plot("ShortMa1", color="color.red")
+builder.add_plot("LongMa2", color="color.green")
 
 # Cetak kode Pinescript
 print(builder.generate())
@@ -141,9 +141,9 @@ builder.input(name="signalSmooth", defval="9", title="Signal Smooth")
 builder.add_indikator(name="[myMacdLine, mySignalLine, myMacdHist]", indicator="macd", source="close", fastlen="fast", slowlen="slow", signalen="signalSmooth")
 
 # Tambahkan Plot MACD ke chart
-builder.add_pot(series="myMacdLine", title="MACD Line" , color="color.blue")
-builder.add_pot(series="mySignalLine", title="Signal Line" , color="color.red")
-builder.add_pot(series="myMacdHist", title="Histogram" , color="color.green", style="plot.style_histogram")
+builder.add_plot(series="myMacdLine", title="MACD Line" , color="color.blue")
+builder.add_plot(series="mySignalLine", title="Signal Line" , color="color.red")
+builder.add_plot(series="myMacdHist", title="Histogram" , color="color.green", style="plot.style_histogram")
 
 # Cetak kode Pinescript
 print(builder.generate())
